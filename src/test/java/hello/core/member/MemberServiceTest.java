@@ -1,11 +1,23 @@
 package hello.core.member;
 
+import hello.core.AppConfig;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class MemberServiceTest {
 
-    MemberService memberService = new MemberServiceImpl();
+    // Test는 왜 바로 appconfig에서 안꺼냄?
+//    MemberService memberService;
+//
+//    @BeforeEach
+//    public void beforeEach() {
+//        AppConfig appConfig = new AppConfig();
+//        memberService = appConfig.memberService();
+//    }
+
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService = appConfig.memberService();
 
     @Test
     void join() {
